@@ -1,0 +1,137 @@
+.success-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.success-modal-content {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+.success-modal-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 10px 20px;
+  border-bottom: 1px solid var(--gray-light);
+  position: relative;
+}
+
+.success-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #4caf50;
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.success-modal-title {
+  flex: 1;
+  margin: 0;
+  font-size: 24px;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.success-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--gray-dark);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  line-height: 1;
+}
+
+.success-modal-close:hover {
+  background-color: var(--gray-light);
+  color: var(--black);
+}
+
+.success-modal-body {
+  padding: 20px;
+}
+
+.success-modal-message {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.success-modal-footer {
+  padding: 10px 20px 20px 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .success-modal-overlay {
+    padding: 10px;
+  }
+
+  .success-modal-content {
+    max-height: 95vh;
+  }
+
+  .success-modal-header {
+    padding: 15px 15px 10px 15px;
+  }
+
+  .success-modal-title {
+    font-size: 20px;
+  }
+
+  .success-modal-body {
+    padding: 15px;
+  }
+
+  .success-modal-footer {
+    padding: 10px 15px 15px 15px;
+  }
+
+  .success-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}
