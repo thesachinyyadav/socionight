@@ -1,10 +1,11 @@
+/* CreateFestForm - Comprehensive Design Specification */
 .create-fest-form-container {
-  max-width: 900px;
+  max-width: 800px; /* Specification requirement */
   margin: 0 auto;
-  padding: 20px;
+  padding: var(--content-padding-desktop);
   background: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-cards);
+  box-shadow: var(--shadow-medium);
   position: relative;
 }
 
@@ -12,71 +13,86 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid var(--gray-light);
+  margin-bottom: var(--spacing-8);
+  padding-bottom: var(--spacing-6);
+  border-bottom: 2px solid var(--light-gray);
 }
 
 .form-title {
   color: var(--secondary-color);
-  font-size: 28px;
-  font-weight: 700;
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: var(--h2-line-height);
   margin: 0;
 }
 
 .form-close-btn {
   background: none;
   border: none;
-  font-size: 28px;
-  color: var(--gray-dark);
+  font-size: var(--h2-size);
+  color: var(--dark-gray);
   cursor: pointer;
-  padding: 5px;
-  border-radius: 4px;
-  transition: all 0.3s;
+  padding: var(--spacing-2);
+  border-radius: var(--radius-buttons);
+  transition: all var(--transition-default);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
 .form-close-btn:hover {
-  background-color: var(--gray-light);
-  color: var(--black);
+  background-color: var(--light-gray);
+  color: var(--text-black);
+}
+
+.form-close-btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 .form-sections {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: var(--section-margin);
 }
 
 .form-section {
-  background: #fafafa;
-  border-radius: 8px;
-  padding: 25px;
+  background: var(--white);
+  border-radius: var(--radius-cards);
+  padding: var(--card-padding-featured);
   border-left: 4px solid var(--primary-color);
+  border: 1px solid var(--light-gray);
 }
 
 .section-title {
   color: var(--secondary-color);
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0 0 20px 0;
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-line-height);
+  margin: 0 0 var(--spacing-6) 0;
   display: flex;
   align-items: center;
+  padding-bottom: var(--spacing-2);
+  border-bottom: 2px solid var(--light-gray);
 }
 
 .section-title::before {
   content: '';
   width: 4px;
-  height: 20px;
+  height: var(--spacing-5);
   background-color: var(--accent-color);
-  margin-right: 10px;
+  margin-right: var(--spacing-3);
   border-radius: 2px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: var(--grid-gap);
+  margin-bottom: var(--spacing-5);
 }
 
 .form-row:last-child {
@@ -86,6 +102,7 @@
 .form-group {
   display: flex;
   flex-direction: column;
+}
 }
 
 .form-group.full-width {
@@ -161,70 +178,36 @@ textarea.form-input {
 }
 
 .form-actions {
-  margin-top: 40px;
-  padding-top: 25px;
-  border-top: 2px solid var(--gray-light);
+  margin-top: var(--spacing-10);
+  padding-top: var(--spacing-6);
+  border-top: 2px solid var(--light-gray);
 }
 
 .action-buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 15px;
+  gap: var(--spacing-4);
 }
 
-.btn {
-  padding: 14px 28px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 48px;
-}
-
-.btn-primary {
-  background-color: var(--primary-color);
-  color: var(--white);
-}
-
-.btn-primary:hover:not(:disabled) {
-  background-color: var(--secondary-color);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(21, 76, 179, 0.3);
-}
-
-.btn-primary:disabled {
-  background-color: var(--gray-medium);
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-}
-
-.btn-secondary:hover:not(:disabled) {
-  background-color: var(--primary-color);
-  color: var(--white);
-  transform: translateY(-1px);
-}
+/* Button styles are inherited from main index.css - using global button system */
 
 .btn-danger {
   background-color: var(--error-color);
   color: var(--white);
+  border: 2px solid var(--error-color);
 }
 
 .btn-danger:hover:not(:disabled) {
-  background-color: #d32f2f;
+  background-color: #dc2626;
+  border-color: #dc2626;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(249, 50, 50, 0.3);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:active:not(:disabled) {
+  background-color: #b91c1c;
+  border-color: #b91c1c;
+  transform: translateY(0);
 }
 
 .btn-spinner {
@@ -236,85 +219,130 @@ textarea.form-input {
   animation: spin 1s linear infinite;
 }
 
-/* Focus management */
+/* Focus management - Enhanced for accessibility */
 .form-input:focus,
 .btn:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 
-/* Required field indicator */
-.form-label::after {
-  content: ' *';
-  color: var(--error-color);
-}
-
-.form-label:not([data-required])::after {
-  content: '';
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
+/* Responsive Design - Comprehensive Design Specification */
+/* Tablet: 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
   .create-fest-form-container {
-    margin: 10px;
-    padding: 15px;
+    margin: var(--spacing-3);
+    padding: var(--content-padding-tablet);
   }
 
   .form-title {
-    font-size: 24px;
+    font-size: var(--h3-size);
   }
 
   .form-section {
-    padding: 20px 15px;
+    padding: var(--spacing-5);
   }
 
   .section-title {
-    font-size: 18px;
+    font-size: var(--h4-size);
   }
 
   .form-row {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: var(--spacing-4);
+  }
+
+  .action-buttons {
+    justify-content: center;
+    gap: var(--spacing-3);
+  }
+
+  .btn {
+    min-width: 140px;
+  }
+}
+
+/* Mobile: Below 768px */
+@media (max-width: 767px) {
+  .create-fest-form-container {
+    margin: var(--spacing-2);
+    padding: var(--content-padding-mobile);
+    border-radius: var(--radius-buttons);
+  }
+
+  .form-header {
+    margin-bottom: var(--spacing-6);
+    padding-bottom: var(--spacing-4);
+  }
+
+  .form-title {
+    font-size: var(--h3-size);
+  }
+
+  .form-section {
+    padding: var(--spacing-4);
+  }
+
+  .section-title {
+    font-size: var(--h4-size);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
   }
 
   .action-buttons {
     flex-direction: column-reverse;
+    gap: var(--spacing-3);
   }
 
   .btn {
     width: 100%;
     justify-content: center;
+    min-height: 44px; /* Larger touch target */
+  }
+
+  .form-input {
+    min-height: 44px; /* Larger touch target */
   }
 }
 
 @media (max-width: 480px) {
   .create-fest-form-container {
-    margin: 5px;
-    padding: 12px;
+    margin: var(--spacing-1);
+    padding: var(--spacing-3);
   }
 
   .form-header {
     flex-direction: column;
-    gap: 15px;
+    gap: var(--spacing-3);
     align-items: stretch;
   }
 
   .form-title {
-    font-size: 22px;
+    font-size: var(--h4-size);
     text-align: center;
   }
 
+  .form-close-btn {
+    align-self: center;
+    width: 36px;
+    height: 36px;
+  }
+
   .form-section {
-    padding: 15px 10px;
+    padding: var(--spacing-3);
   }
 
   .section-title {
-    font-size: 16px;
+    font-size: var(--h5-size);
   }
 
   .form-input {
-    font-size: 16px; /* Prevents zoom on iOS */
-    padding: 10px;
+    font-size: var(--body-size); /* Prevents zoom on iOS */
+    padding: var(--spacing-3);
   }
 }
 
